@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+
+		var answer = parseInt(Math.random() * 100);
+		var gameOver = 0;
+		var idPlayer = 1;
+		
+		function readInt(){
+			var number = document.getElementById("userAnswer").value;
+			return parseInt(number);
+		}
+
+		function write(text){
+			document.getElementById("info").innerHTML = text;
+		}
+
+		function hide(id){
+			document.getElementById(id).style.display = "none";
+		}
+
+		function getIdPlayer(idPlayer)
+		{
+			var currentPlayer = "";
+			if (idPlayer % 2 == 0)
+			{
+				currentPlayer = "Второй";
+				return currentPlayer;
+			}
+			else 
+			{
+				currentPlayer = "Первый";
+				return currentPlayer;
+			}
+		}
+		 
+		function guess(){
+			var _idPlayer = getIdPlayer(idPlayer);
+			idPlayer++;
+			var userAnswer = readInt();
+			button.innerText = "Ответить";
+			if(userAnswer == answer){
+				write("<b>Поздравляю, " + _idPlayer.toLowerCase() + " игрок, угадал!</b>");
+				hide("userAnswer");
+				button.innerText = "Начать заново";
+				gameOver++;
+			} else if(userAnswer > answer){
+				write(_idPlayer + " игрок ввел слишком большое число<br>Ходит " + getIdPlayer(idPlayer).toLowerCase() + " игрок. Введите число от 1 до 100");
+				
+			} else if(userAnswer < answer){
+				write(_idPlayer + " игрок ввел слишком маленькое число<br>Ходит " + getIdPlayer(idPlayer).toLowerCase() + " игрок. Введите число от 1 до 100");			
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="puzzle.html">Загадки</a>
+		<a href="#">Угадайка</a>
+		<a href="password_generator.html">Генератор паролей</a>
+	</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра угадайка</h1>
+
+			<div class="box">
+
+				<p id="info">Предлагаю вам с другом сыграть в игру! <br>Угадайте число от 0 до 100</p>
+				<input type="text" id="userAnswer">
+				<br>
+				<a href="#" onClick="if (gameOver==1) window.location.reload(); else guess();" id="button">Начать</a>
+
+			</div>
+
+        </div>
+    </div>
+</div>
+
+	
+
+</div>
+<div class="footer">
+	Copyright &copy; Dmitry Tikhonov
+<div>
+
+
+</body>
+</html>
