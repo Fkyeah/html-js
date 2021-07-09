@@ -1,0 +1,112 @@
+$max-width: 1140px;
+$text-color: #FFFFFF;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+.top_menu {
+    padding-top: 42px;
+    display: flex;
+    justify-content: space-between;
+
+    &__link {
+        text-decoration: none;
+    }
+}
+
+.content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-around;
+    &_card {
+        max-width: $max-width / 3 - 200px;
+        box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
+        border-radius: 10px;
+        padding: 20px 20px;
+        &_img {
+            width: 100%;
+        }
+    }
+}
+
+
+.footer {
+    background: #316099;
+    &_info {
+        display: block;
+    }
+    &_heading {
+        max-width: 340px;
+        font-size: 36px;
+        line-height: 46px;
+        letter-spacing: 0.05em;
+        color: $text-color;
+    }
+    &_text {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.05em;
+        color: $text-color;
+        opacity: 0.6;
+        max-width: 494px;
+        padding-top: 32px;
+    }
+    &_content {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 91px;
+        position: relative;
+        padding-bottom: 96px;
+    }
+    &_button {
+        align-self: center;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: $text-color;
+        background: #5A98D0;
+        text-decoration: none;
+        padding: 15px 80px;
+        display: inline-block;
+    }
+    &_line {
+        opacity: 0.4;
+        border: 1px solid $text-color;
+    }
+    &_contacts {
+        background: #316099;
+    }
+    &_contacts_list {
+        margin-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+    }
+    &_contact {
+        flex-basis: 33.3333%;
+        flex-grow: 1;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.05em;
+        color: $text-color; 
+        padding-right: 50px;
+        padding-left: 19px;
+    }
+    &_copyright {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.05em;
+        color: $text-color;
+        opacity: 0.4;
+        padding: 64px 0;
+    }
+}
